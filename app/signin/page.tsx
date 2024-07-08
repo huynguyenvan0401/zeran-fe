@@ -1,20 +1,16 @@
 "use client";
-import Image from "next/image";
 import styles from "./styles.module.css";
 import clsx from "clsx";
 import Link from "next/link";
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect, useRef, useState } from "react";
 import * as Toast from "@radix-ui/react-toast";
 import { useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 
 export default function Signin() {
-  const params = useSearchParams();
-  const callbackUrl = params?.get("callbackUrl") || "/";
+  const params = useParams<{ callbackUrl: string }>();
+  const callbackUrl = params?.callbackUrl || "/";
 
   const router = useRouter();
 

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as Form from "@radix-ui/react-form";
 import * as Toast from "@radix-ui/react-toast";
 import JsGoogleTranslateFree from "@kreisler/js-google-translate-free";
-import { Sentence, DataSub } from "@/components/Audio/data";
+import { Sentence, DataSub } from "@/components/Audio/type";
 import styles from "./styles.module.css";
 import clsx from "clsx";
 import Kuroshiro from "kuroshiro";
