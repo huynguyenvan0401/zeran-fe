@@ -16,11 +16,11 @@ export type Subtile = {
 
 export default async function Listening({ params }: { params: { id: string } }) {
   const session = await getServerSession(authOptions);
-  if (!session) {
-    const callbackUrl = encodeURIComponent(`/listening/${params.id}`);
-    redirect(`${process.env.NEXT_PUBLIC_BASE_URL}/signin?callbackUrl=${callbackUrl}`);
-  }
 
+  if (!session?.user?.id) {
+    const callbackUrl = encodeURIComponent(`/listening/${params.id}`);
+    redirect(`/signin?callbackUrl=${callbackUrl}`);
+  }
   const subtile = await AuthGetApi(`/listens/${params.id}`);
 
   return (

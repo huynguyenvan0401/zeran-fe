@@ -5,14 +5,12 @@ import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect, useRef, useState } from "react";
 import * as Toast from "@radix-ui/react-toast";
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Signin() {
-  const params = useParams<{ callbackUrl: string }>();
-  const callbackUrl = params?.callbackUrl || "/";
-
-  const router = useRouter();
+function Signin() {
+  const params = useSearchParams();
+  const callbackUrl = params?.get("callbackUrl") || "/";
 
   // Toast control
   const [open, setOpen] = useState(false);
@@ -27,9 +25,9 @@ export default function Signin() {
 
   useEffect(() => {
     if (session?.user?.id) {
-      router.push(callbackUrl);
+      window.location.href = callbackUrl;
     }
-  }, [session, callbackUrl, router]);
+  }, [session, callbackUrl]);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -158,6 +156,14 @@ export default function Signin() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function SigninPage() {
+  return (
+    <Suspense>
+      <Signin />
+    </Suspense>
   );
 }
 
