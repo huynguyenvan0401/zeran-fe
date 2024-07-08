@@ -1,5 +1,5 @@
 import AudioPlayer from "@/components/Audio";
-import { Sentence } from "@/components/Audio/data";
+import { Sentence } from "@/components/Audio/type";
 import { AuthGetApi } from "@/lib/fetchApi";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";

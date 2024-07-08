@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import AudioPlayer from "react-h5-audio-player";
-import { Sentence, Transcript } from "./data";
+import { Sentence, Transcript } from "./type";
 import clsx from "clsx";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { Subtile } from "@/app/listening/[id]/page";
