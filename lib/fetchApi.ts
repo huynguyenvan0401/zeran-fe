@@ -24,7 +24,7 @@ export async function AuthGetApi(url: string) {
   let res = await fetch(BASE_URL + url, {
     method: "GET",
     headers: {
-      Authorization: `bearer ${session?.user.accessToken}`,
+      Authorization: `Bearer ${session?.user.accessToken}`,
     },
   });
   console.log("res.status", res.status);
@@ -37,7 +37,7 @@ export async function AuthGetApi(url: string) {
     res = await fetch(BASE_URL + url, {
       method: "GET",
       headers: {
-        Authorization: `bearer ${session?.user.accessToken}`,
+        Authorization: `Bearer ${session?.user.accessToken}`,
       },
     });
     return await res.json();
