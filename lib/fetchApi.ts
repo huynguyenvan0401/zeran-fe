@@ -20,6 +20,8 @@ export async function AuthGetApi(url: string) {
   console.log("session Server side", session);
 
   console.log("before: ", session?.user.accessToken);
+  console.log(`url call:${BASE_URL + url}`);
+
 
   let res = await fetch(BASE_URL + url, {
     method: "GET",
