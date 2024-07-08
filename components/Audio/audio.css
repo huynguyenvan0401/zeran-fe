@@ -1,0 +1,48 @@
+/* Overide HTML5 audio */
+.rhap_volume-button {
+  color: #000;
+}
+
+.rhap_main-controls-button {
+  color: #000;
+}
+
+.rhap_progress-indicator {
+  background: #000;
+}
+
+.rhap_time {
+  color: #000;
+}
+
+.rhap_repeat-button {
+  color: #000;
+}
+
+.rhap_volume-indicator {
+  background: #000;
+}
+
+.rhap_volume-bar {
+  background: #333;
+}
+
+.rhap_progress-filled {
+  background-color: #a5376b;
+}
+
+.rhap_container {
+  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.rhap_download-progress {
+  background-color: #bf6d94;
+}
+
+.rhap_progress-bar-show-download {
+  background-color: #a17087;
+}
+
+/* End HTML5 */
